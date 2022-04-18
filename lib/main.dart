@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/screens/chat_screen.dart';
+import 'package:whatsapp_clone/screens/home_screen.dart';
 
 void main() {
   runApp(const WhatsApp());
@@ -17,7 +17,7 @@ class WhatsApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ChatScreen(),
+      home: const HomeScreen(),
     );
   }
 }
