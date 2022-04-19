@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/screens/message_screen.dart';
 import '../provider/chat_model.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -13,6 +15,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class ChatScreenState extends State<ChatScreen> {
+  Faker faker = Faker();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -31,23 +34,26 @@ class ChatScreenState extends State<ChatScreen> {
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(
-                      dummyData[i].name,
+                    Text(faker.person.name(),
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    Text(
-                      dummyData[i].time,
+                    Text(faker.date.time(),
                       style: TextStyle(color: Colors.grey, fontSize: 14.0),
                     ),
                   ],
                 ),
                 subtitle: Container(
                   padding: const EdgeInsets.only(top: 5.0),
-                  child: Text(
-                    dummyData[i].message,
+                  child: Text(faker.lorem.sentence(),
                     style: TextStyle(color: Colors.grey, fontSize: 15.0),
                   ),
                 ),
+                onTap: (){
+                   Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MessageScreen()),
+                  );
+                },
               )
             ],
           ),
