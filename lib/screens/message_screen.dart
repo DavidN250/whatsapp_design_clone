@@ -1,16 +1,7 @@
 // ignore_for_file: prefer_const_constructors, dead_code
 
-import 'dart:html';
-
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/screens/camera_screen.dart';
-import 'package:whatsapp_clone/screens/chat_screen.dart';
-import 'package:whatsapp_clone/screens/groups_screen.dart';
-import 'package:whatsapp_clone/screens/status_screen.dart';
-import 'package:whatsapp_clone/screens/typing_message_screen.dart';
-
-import 'calls_screen.dart';
 
 class MessageScreen extends StatefulWidget {
   const MessageScreen({Key? key}) : super(key: key);
@@ -51,7 +42,7 @@ class _MessageScreenState extends State<MessageScreen>
                   );
                 },
           icon: Icon(Icons.arrow_back_sharp)) ,
-          
+
         title: Text(faker.phoneNumber.us()),
         // ignore: prefer_const_literals_to_create_immutables
         actions: [
